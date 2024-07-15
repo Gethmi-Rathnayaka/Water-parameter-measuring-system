@@ -52,7 +52,7 @@ bool signupOK = false;
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
 
-#define GPS_BAUDRATE 9600  // The default baudrate of NEO-6M is 9600
+#define GPS_BAUDRATE 9600  
 
 TinyGPSPlus gps;  // the TinyGPS++ object
 
@@ -70,7 +70,7 @@ int analogBufferTemp[SCOUNT];
 int analogBufferIndex = 0;
 int copyIndex = 0;
 int lineNumber = 1;
-//Wifi retry couunter
+//Wifi retry counter
 int x;
 
 //Turbidity Sensor
@@ -86,7 +86,7 @@ float averageVoltage = 0;
 float tdsValue = 0;
 float temperature = 25;  // current temperature for compensation
 
-bool isPHrunning = false;
+//bool isPHrunning = false;
 
 char formattedString[100];
 char dataString[1000];
@@ -362,7 +362,7 @@ void PHsense() {
   static unsigned long timepoint = millis();
   if (millis() - timepoint > 2000U) 
   {
-    isPHrunning = true;
+    //isPHrunning = true;
     timepoint = millis();
     voltage = ads.readADC_SingleEnded(1) / 10;  // read the voltage
 
